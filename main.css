@@ -49,6 +49,12 @@ a:hover {
     background-color: blueviolet;
 }
 
+#esportes { background: #636393; }
+#economia { background: #B5222D; }
+#entretenimento { background: #D4953C; }
+#tecnologia { background: #609491; }
+
+
 .articles {
     display: flex;
     flex-wrap: wrap;
