@@ -1,15 +1,12 @@
-const form = document.getElementById('form');
+$('form').on('submit', (e) => {
+  e.preventDefault();
+  const tarefa = $('#tarefa').val();
+  if (tarefa !== '') {
+    $('ul').append(`<li>${tarefa}</li>`);
+    $('#tarefa').val('');
+  }
+});
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const campoA = document.getElementById('A');
-    const campoB = document.getElementById('B');
-    
-    if (campoB.value > campoA.value) {
-        alert('formulário válido!')
-    } else {
-        alert('formulário inválido!')
-    }
-    campoA.value = '';
-    campoB.value = '';
-})
+$('ul').on('click', 'li', function() {
+  $(this).toggleClass('line');
+});
