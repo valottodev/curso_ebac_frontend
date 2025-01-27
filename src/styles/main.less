@@ -1,8 +1,18 @@
-@use 'modules/reset';
-@use 'modules/variables';
+@import 'maps.less';
+@import 'variáveis.less';
+
+@tablet: ~'(max-width: 1023px)';
+@mobile: ~'(max-width: 767px)';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
 
 body {
-    background-color: #f5f6fa;
+    background-color: #colors[bodyColor];
 }
 
 li {
@@ -13,10 +23,14 @@ li {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    @media @tablet {
+        max-width: 80%;
+    }
 }
 
 header {
-    background-color: #182C61;
+    background-color: #colors[headerColor];
     position: sticky;
     top: 0;
     left: 0;
@@ -26,18 +40,17 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 16px 0;
-
-        img {
-            width: 72px;
-        }
     }
 }
 
+
 .menu {
     display: flex;
+
     li {
         font-weight: bold;
         margin-left: 24px;
+
         a {
             color: #fff;
             text-decoration: none;
@@ -56,33 +69,38 @@ section {
     column-gap: 1%;
     row-gap: 4%;
     width: 100%;
+
+    @media @tablet {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+    @media @mobile {
+        display: block;
+    }
 }
 
-.product-item img {
-    width: 100%;
-    border-radius: 16px;
+.product-item {
+    @media @mobile {
+        margin-bottom: 32px;
+    }
+    
+    img {
+        width: 100%;
+        border-radius: 16px;
+    }
 }
 
 .product-button {
     display: block;
-    background-color: variables.$btnColor;
+    background-color: #44bd32;
     color: #fff;
     text-align: center;
     padding: 8px 0;
     border-radius: 8px;
     margin-top: 8px;
     text-decoration: none;
+
     &:hover {
-        background-color: rgb(115.8389121339, 214.309623431, 101.190376569);
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .products {
-        display: block;
-    }
-
-    .product-item {
-        margin-bottom: 32px;
+        background-color: #4cd137;
     }
 }
