@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "grunt": "grunt",
+    "build": "grunt build",
     "less": "less-watch-compiler ./src/styles ./build/styles main.less",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +12,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-less": "^3.0.0",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-replace": "^2.0.2",
+    "grunt-text-replace": "^0.4.0",
     "less": "^4.2.2",
     "less-watch-compiler": "^1.16.3"
   }
