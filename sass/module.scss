@@ -1,21 +1,21 @@
 .produto {
-    &-imagem {
+    &__imagem {
         /* elemento */
         width: 100%;
     }
 
-    &-nome {
+    &__nome {
         /* elemento */
         font-size: 1.2em;
         margin: 8px 0;
     }
 
-    &-descricao {
+    &__descricao {
         /* elemento */
         color: gray;
     }
 
-    &.em-destaque {
+    &--em-destaque {
         /* modificador */
         border: 2px solid gold;
         padding: 8px;
